@@ -28,7 +28,8 @@ async def predict(
 
     prediction = MODEL.predict(img_batch)
 
-    return prediction
+
+    return CLASS_NAMES[np.argmax(prediction[0])]
 
 
 if __name__ == "__main__":
